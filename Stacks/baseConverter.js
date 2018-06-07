@@ -7,6 +7,7 @@ function baseConverter(decNumber, base) {
     digits = '0123456789ABCDEF'; //{6}
   while (decNumber > 0) {
     rem = Math.floor(decNumber % base);
+    console.log(rem);
     remStack.push(rem);
     decNumber = Math.floor(decNumber / base);
   }
