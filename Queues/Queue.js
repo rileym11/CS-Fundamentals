@@ -1,5 +1,6 @@
 let Queue = (function() {
-  const items = new WeakMap();
+  //Closure
+  const items = new WeakMap(); // Create a weakmap for a private variable
   class Queue {
     constructor() {
       items.set(this, []);
