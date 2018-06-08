@@ -14,12 +14,15 @@ let Queue = (function() {
       let r = q.shift();
       return r;
     }
-    peek() {
+    front() {
       let q = items.get(this);
       return q[0];
     }
     isEmpty() {
       return items.get(this).length === 0;
+    }
+    size() {
+      return items.get(this).length;
     }
     print() {
       let q = items.get(this);
