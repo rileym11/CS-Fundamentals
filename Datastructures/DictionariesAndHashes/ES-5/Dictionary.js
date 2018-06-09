@@ -1,5 +1,6 @@
-//ES 6 has a Map() class included (Maps are another term for Dictionaries) 
-
+//ES 6 has a Map() class included (Maps are another term for Dictionaries)
+// these are sets that have seperate key/values as opposed to just keys in a set
+//Set: {o:'o'} //Dictionary/map: {Gandalf: 'gandalf@email.com'}
 // ES 5 ============================
 //
 function Dictionary() {

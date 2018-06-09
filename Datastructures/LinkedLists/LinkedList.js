@@ -115,10 +115,10 @@ function LinkedList() {
 module.exports = LinkedList;
 
 let list = new LinkedList();
-list.append(13);
+list.append({ we: 22 });
 list.append(10);
 list.append(15);
 list.append(11);
-console.log(list.toString());
+// console.log(list.toString());
 list.insert(2, 66);
-console.log(list.getHead());
+// console.log(list.getHead());
