@@ -1,17 +1,11 @@
-//Hash tables are unique objs (key value pairs) where the keys are stored as a hash, in this case
-// their ASCII values for super quick accessing
+// Hash Code Algorithims
+const loseloseHashCode = require('../HashCodes/loselose'); //weak -- lots of collusions
+const djb2HashCode = require('../HashCodes/djb2'); // better -- less collusions
+
+//Hash tables are unique objs (key value pairs) where the keys are stored as a hash for super quick accessing
 
 function HashTable() {
   var table = []; //Array will be filled with undef values of all the indexes leading up to the entered keys hash
-
-  var loseloseHashCode = function(key) {
-    var hash = 0; /// Var that will store the combined ASCII value
-    for (var i = 0; i < key.length; i++) {
-      //iterate through the key and add each characters ASCII value to the hash
-      hash += key.charCodeAt(i);
-    }
-    return hash % 37; ///To work with lower numbers, use the rest of the division of the hash number using an arbitrary number
-  };
 
   this.put = function(key, value) {
     var position = loseloseHashCode(key); // get the hash code of the key
@@ -40,12 +34,10 @@ function HashTable() {
 //Tests
 var hash = new HashTable();
 hash.put('Gandalf', 'gandalf@email.com');
-hash.put('Gandalf', 'gandalfs@email.com');
-
 hash.put('John', 'johnsnow@email.com');
 hash.put('Tyrion', 'tyrion@email.com');
 hash.put('Pablo', 'pablo@email.com');
-hash.remove('Gandalf');
+// hash.remove('Gandalf');
 console.log(hash.get('Pablo'));
 hash.print();
 console.log(hash.get('Gandalf'));

@@ -1,4 +1,8 @@
 const LinkedList = require('../../LinkedLists/LinkedList');
+//
+// Hash Code Algorithims
+const loseloseHashCode = require('../HashCodes/loselose'); //weak -- lots of collusions
+const djb2HashCode = require('../HashCodes/djb2'); // better -- less collusions
 
 //HashTable.js has the hash table documentation
 
@@ -6,14 +10,6 @@ const LinkedList = require('../../LinkedLists/LinkedList');
 
 function SCHashTable() {
   var table = [];
-
-  var loseloseHashCode = function(key) {
-    var hash = 0;
-    for (var i = 0; i < key.length; i++) {
-      hash += key.charCodeAt(i);
-    }
-    return hash % 37;
-  };
 
   var ValuePair = function(key, value) {
     //Helper class that stores items

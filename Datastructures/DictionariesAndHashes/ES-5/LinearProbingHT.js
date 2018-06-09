@@ -1,17 +1,13 @@
+// Hash Code Algorithims
+const loseloseHashCode = require('../HashCodes/loselose'); //weak -- lots of collusions
+const djb2HashCode = require('../HashCodes/djb2'); // better -- less collusions
+
 //HashTable.js has the hash table documentation
 
 //This file attempts to solve the hash table collusion problem using linear probing
-
 function LPHashTable() {
   var table = [];
 
-  var loseloseHashCode = function(key) {
-    var hash = 0;
-    for (var i = 0; i < key.length; i++) {
-      hash += key.charCodeAt(i);
-    }
-    return hash % 37;
-  };
   var ValuePair = function(key, value) {
     //Helper class that stores items
     this.key = key;
@@ -24,6 +20,7 @@ function LPHashTable() {
 
   this.put = function(key, value) {
     var position = loseloseHashCode(key); // get ASCII
+    console.log(position);
     if (table[position] == undefined) {
       // if nothing is at the position then just add a valuepair of it
       table[position] = new ValuePair(key, value);
@@ -107,7 +104,7 @@ hash.put('Paul', 'paul@email.com');
 hash.put('Nathan', 'nathan@email.com');
 
 hash.print();
-console.log(hash.get('Ana'));
-hash.remove('Ana');
-console.log('================================');
-hash.print();
+// console.log(hash.get('Ana'));
+// hash.remove('Ana');
+// console.log('================================');
+// hash.print();
