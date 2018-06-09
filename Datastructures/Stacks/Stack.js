@@ -6,7 +6,7 @@ let Stack = (function() {
       items.set(this, []); //Set the weakmaps key to 'this' and value to []
     }
     push(element) {
-      let s = items.get(this); //{3}
+      let s = items.get(this); 
       s.push(element);
     }
     _pop() {
@@ -27,7 +27,7 @@ let Stack = (function() {
       return s;
     }
   }
-  return Stack; //{5} //Return the
+  return Stack; //Return the Stack class
 })();
 
 module.exports = Stack;

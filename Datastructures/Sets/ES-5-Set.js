@@ -26,7 +26,7 @@ function Set() {
     items = {}; // reset items obj
   };
   this.size = function() {
-    return Object.keys(items).length; //{4}
+    return Object.keys(items).length; 
   };
   this.values = function() {
     return Object.keys(items);
