@@ -39,6 +39,9 @@ function BinarySearchTree() {
     if (root === null) {
       //if the tree is empty then the new node will be the root
       root = newNode;
+    } else if (searchNode(root, key)) {
+      //Check if the node already exists
+      return null;
     } else {
       insertNode(root, newNode); //if not then pass the root node and the new node into the helper function
     }
@@ -250,6 +253,6 @@ tree.preOrderTraverse(printNode);
 console.log('============POST=ORDER============');
 tree.postOrderTraverse(printNode);
 
-tree.remove(7);
-console.log('============DEL=PRE=ORDER============');
-tree.preOrderTraverse(printNode);
+// tree.remove(7);
+// console.log('============DEL=PRE=ORDER============');
+// tree.preOrderTraverse(printNode);
