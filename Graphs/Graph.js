@@ -8,7 +8,7 @@ function Graph() {
     vertices.push(v); //Push the vertex to the array of vertices
     adjList.set(v, []); //Initialize a key with the new vertex and an empty adjacent array as the value
   };
-  this.addEdge = function(v, w) {
+  this.addEdge = function(v, w) {//Edges are pretty much just connections
     adjList.get(v).push(w); //Add the w vertex into the v vertex's adjacent list
     adjList.get(w).push(v); //If using Un-directed graphs then push v vertex into the w vertex's adjacent list
   };
@@ -26,6 +26,10 @@ function Graph() {
     }
     return s;
   };
+
+  //Traversing
+  //Breadth-first search (BFS)
+  
 }
 
 //Tests

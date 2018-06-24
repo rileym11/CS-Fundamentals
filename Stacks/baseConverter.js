@@ -12,7 +12,7 @@ function baseConverter(decNumber, base) {
     decNumber = Math.floor(decNumber / base);
   }
   while (!remStack.isEmpty()) {
-    baseString += digits[remStack._pop()];
+    baseString += digits[remStack.pop()];
   }
   return baseString;
 }

@@ -13,7 +13,7 @@ function getBinary(decNumber) {
   }
   while (remStack.isEmpty() === false) {
     //{5}
-    binaryString += remStack._pop().toString();
+    binaryString += remStack.pop().toString();
   }
 
   return binaryString;

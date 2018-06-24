@@ -1,35 +1,35 @@
-let Queue = (function() {
-  //Closure
-  const items = new WeakMap(); // Create a weakmap for a private variable
-  class Queue {
-    constructor() {
-      items.set(this, []);
-    }
-    enqueue(element) {
-      let q = items.get(this);
-      q.push(element);
-    }
-    dequeue() {
-      let q = items.get(this);
-      let r = q.shift();
-      return r;
-    }
-    front() {
-      let q = items.get(this);
-      return q[0];
-    }
-    isEmpty() {
-      return items.get(this).length === 0;
-    }
-    size() {
-      return items.get(this).length;
-    }
-    print() {
-      let q = items.get(this);
-      return q.toString();
-    }
-  }
-  return Queue;
-})();
+function Queue() {
+  let items = [];
+  this.enqueue = function(element) {
+    items.push(element);
+  };
+  this.dequeue = function() {
+    return items.shift();
+  };
+  this.front = function() {
+    return items[0];
+  };
+  this.isEmpty = function() {
+    return items.length === 0;
+  };
+  this.size = function() {
+    return items.length;
+  };
+  this.print = function() {
+    return console.log(items.toString());
+  };
+}
+
+let q = new Queue();
+let arr = ['a', 'b', 'c', 'd', 'f'];
+for (let i = 0; i < arr.length; i++) q.enqueue(arr[i]);
+q.print();
+q.dequeue();
+q.dequeue();
+q.print();
+q.enqueue('p');
+q.print();
+q.dequeue();
+q.print();
 
 module.exports = Queue;
