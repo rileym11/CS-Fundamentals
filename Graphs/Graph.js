@@ -1,6 +1,8 @@
+const Dictionary = require('../Dictionaries(Maps)AndHashesTables/ES-5/Dictionary(Map)');
+
 function Graph() {
   var vertices = []; //Array that will store all the vertices
-  var adjList = new Map(); //ES6 map class to store the adjacent list
+  var adjList = new Dictionary(); //ES6 map class to store the adjacent list
 
   this.addVertex = function(v) {
     vertices.push(v); //Push the vertex to the array of vertices
@@ -15,9 +17,9 @@ function Graph() {
     for (var i = 0; i < vertices.length; i++) {
       //Iterate through all the vertices
       s += vertices[i] + ' -> ';
-      var neighbors = adjList.get(vertices[i]); //Next get each vertex's adjacent list 
+      var neighbors = adjList.get(vertices[i]); //Next get each vertex's adjacent list
       for (var j = 0; j < neighbors.length; j++) {
-        // Iterate the adj list and add each one to the string 
+        // Iterate the adj list and add each one to the string
         s += neighbors[j] + ' ';
       }
       s += '\n'; //so each vertex is printed on a new line
@@ -28,7 +30,7 @@ function Graph() {
 
 //Tests
 var graph = new Graph();
-var myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I']; 
+var myVertices = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
 for (var i = 0; i < myVertices.length; i++) {
   //Add all the vertices
   graph.addVertex(myVertices[i]);

@@ -46,10 +46,12 @@ function Dictionary() {
   };
 }
 
-var dictionary = new Dictionary();
-dictionary.set('Gandalf', 'gandalf@email.com');
-dictionary.set('Gandalf', 'gandalf@email.com');
-dictionary.set('John', 'johnsnow@email.com');
-dictionary.set('Tyrion', 'tyrion@email.com');
-console.log(dictionary.has('Gandalf'));
-console.log(dictionary.getItems());
+// var dictionary = new Dictionary();
+// dictionary.set('Gandalf', 'gandalf@email.com');
+// dictionary.set('Gandalf', 'gandalf@email.com');
+// dictionary.set('John', 'johnsnow@email.com');
+// dictionary.set('Tyrion', 'tyrion@email.com');
+// console.log(dictionary.has('Gandalf'));
+// console.log(dictionary.getItems());
+
+module.exports = Dictionary;
